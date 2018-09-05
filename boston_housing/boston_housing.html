@@ -12398,7 +12398,8 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: Grid search technique, is used to evaluate a model or a classifier over a range of values for the hyperparameters. Out of those the best fit is chosen to perform our task. In our case we are using desicion tree classifier, in which one of the  hyper parameter is max_depth-it is the number of decision level(hight of tree or number of questions to be asked to achieve an answer), for a range of max_depth values we calculate how the model evaluates and the grid search technique returns the best value for it. </strong></p>
+<p><strong>Answer: Grid search algorithm is used to return the best value for the parameters avaliable for a estimator with respect to a data set. 
+In our case we have our regressor to be Decision tree classifier. It has one of its parameter to be max_depth:it is the number of questions to be answered for a decision tree classifeier to produce a desired output. Now the grid search aglo accepts the parameters "max_depth"(range of values),training data set, scorer(in our case r2 score), and regressor(in our case descision tree regressor). Over the ranfe of the parameter "max_depth", the model will be tested with respect to the data set and the best value wich corresponds to the best fit of the model is returned.</strong></p>
 
 </div>
 </div>
@@ -12662,7 +12663,18 @@ Predicted selling price for Client 3&#39;s home: $938,053.85
          Client 3: 8 rooms, 3% neighborhood poverty level, 12 to 1 pupil to teacher ratio costs $938,053.85.
          This trend makes sense as, the number of rooms located in a low poverty neighborhood and low pupil 
          to teacher ratio will have a higher cost compared to other locations. This trend is seen in the
-         result of the data points.</strong></p>
+         result of the data points.
+         Looking at the data exploration section, we find that the price for all the three client is in the
+         maximum and minimum value range.
+         client 1 has the price near the mean, looking at the data all the houses near the mean have almost same
+         price for the similar parameters.
+         client 2 has the price below the mean and client 3 has the price above the mean. the prediction satisfies 
+         the parameters.
+         The median value $438900.0 corresponds to RM=5.3885,LSTAT=8.79,PTRATIO=18.9 now comparing client 1 with the RM=5 
+         LSTAT=17, PTRATIO=15we have the price near to the median. while the other two clients
+         have there value above and below the median. By the looks of mean=$454342.9447852761 and meadian = $438900.0
+         looks like there are not many outliers to pull the average down. Now looking at our prediction, it looks 
+         like "number of rooms" in the house play the most important role in determining the price of the house. </strong></p>
 
 </div>
 </div>
